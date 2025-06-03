@@ -2,18 +2,15 @@ package org.agrotis.cad.messages;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import org.agrotis.cad.model.Register;
+import lombok.*;
+import org.agrotis.cad.model.RegisterEntity;
 import org.springframework.http.HttpStatus;
-
 import java.io.Serializable;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -21,9 +18,9 @@ import java.util.List;
 public class ApiResponseRegister extends ApiResponseMessage implements Serializable {
 
   @Schema(description = "Registro")
-  private Register data;
+  private RegisterEntity data;
 
-  public ApiResponseRegister(HttpStatus status, String className, List<Message> messages, Register data, String globalMessage) {
+  public ApiResponseRegister(HttpStatus status, String className, List<Message> messages, RegisterEntity data, String globalMessage) {
     this.data = data;
     this.setStatus(status);
     this.setGlobalMessage(globalMessage);

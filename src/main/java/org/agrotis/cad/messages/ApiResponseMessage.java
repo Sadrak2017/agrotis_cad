@@ -8,7 +8,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -52,13 +51,5 @@ public class ApiResponseMessage implements Serializable {
     this.globalMessage = globalMessage;
   }
 
-  public void addMessage(Message message) {
-    if (messages == null) {
-      messages = new ArrayList<>();
-    }
-    if (message != null) {
-      messages.add(message);
-    }
-  }
 
 }

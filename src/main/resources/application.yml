@@ -47,10 +47,9 @@ logging:
   pattern:
     level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
 
-desafio:
-  agrotis:
-    ambiente:
-      openapi:
-        dev-url: http://localhost:9595{server.servlet.context-path}
-        hml-url: http://hml:9595{server.servlet.context-path}
-        prd-url: http://prd:9595{server.servlet.context-path}
+agrotis:
+  environment:
+    server:
+      dev-url: http://localhost:9595{server.servlet.context-path}
+      hml-url: http://hml:9595{server.servlet.context-path}
+      prd-url: http://prd:9595{server.servlet.context-path}

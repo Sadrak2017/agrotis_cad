@@ -15,11 +15,11 @@ import java.util.List;
 @Configuration
 public class OpenAPIConfig {
 
-  @Value("${desafio.agrotis.ambiente.openapi.dev-url}")
+  @Value("${agrotis.environment.server.dev-url}")
   private String devUrl;
-  @Value("${desafio.agrotis.ambiente.openapi.hml-url}")
+  @Value("${agrotis.environment.server.hml-url}")
   private String hmlUrl;
-  @Value("${desafio.agrotis.ambiente.openapi.prd-url}")
+  @Value("${agrotis.environment.server.prd-url}")
   private String prodUrl;
 
   @Bean
@@ -33,7 +33,7 @@ public class OpenAPIConfig {
     int currentYear = Calendar.getInstance().get(Calendar.YEAR);
 
     License license = new License()
-      .name("Agrotis | Desafio - Sistema de Cadastro")
+      .name("Agrotis | Teste Técnico - Sistema de Cadastro")
       .url("https://agrotis.com.br/termos-e-condicoes-de-uso/");
 
     Server devServer = new Server();
@@ -50,7 +50,7 @@ public class OpenAPIConfig {
 
     String version = "1.0.0";
     Info info = new Info()
-      .title("Desafio - Sistema de Cadastro - Agrotis")
+      .title("Teste Técnico - Sistema de Cadastro - Agrotis")
       .version(version)
       .contact(contact)
       .description("Agrotis| Sistema de Cadastro © " + currentYear +

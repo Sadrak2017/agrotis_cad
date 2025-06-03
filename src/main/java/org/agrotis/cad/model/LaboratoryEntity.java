@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Table(name = "laboratory")
 @Entity(name = "laboratory")
-public class Laboratory implements Serializable {
+public class LaboratoryEntity implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

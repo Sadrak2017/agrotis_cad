@@ -19,8 +19,10 @@ public class RegisterService {
 
 
   public ResponseEntity<ApiResponse> get_properties() {
+    return null;
   }
 
   public ResponseEntity<ApiResponse> get_laboratories() {
+    return null;
   }
 }

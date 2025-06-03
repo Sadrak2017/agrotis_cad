@@ -29,9 +29,16 @@ public class Message implements Serializable {
   }
 
   @Getter
-  @AllArgsConstructor
   public enum MessageTypeEnum {
-    E("Erro"), C("Consistência"), A("Atenção"), I("Informação"), O("Sucesso");
+    E("Erro"),
+    C("Consistência"),
+    A("Atenção"),
+    I("Informação"),
+    O("Sucesso");
+
     private final String description;
+    MessageTypeEnum(String description) {
+      this.description = description;
+    }
   }
 }

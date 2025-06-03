@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Table(name = "register")
 @Entity(name = "register")
-public class Register implements Serializable {
+public class RegisterEntity implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO, generator = "UUID")
@@ -34,11 +34,11 @@ public class Register implements Serializable {
 
   @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "property_id", nullable = false)
-  private Property property;
+  private PropertyEntity propertyEntity;
 
   @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "laboratory_id", nullable = false)
-  private Laboratory laboratory;
+  private LaboratoryEntity laboratoryEntity;
 
   @Column(name = "update", nullable = false)
   private Timestamp update = new Timestamp(System.currentTimeMillis());
