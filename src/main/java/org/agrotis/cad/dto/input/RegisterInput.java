@@ -30,4 +30,7 @@ public class RegisterInput implements Serializable {
   @Schema(description = "Código da Propriedade", example = "6")
   private Integer codProperty;
 
+  @Schema(description = "Observações", example = "6")
+  private String observations;
+
 }

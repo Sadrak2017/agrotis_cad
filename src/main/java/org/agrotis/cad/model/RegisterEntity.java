@@ -32,6 +32,9 @@ public class RegisterEntity implements Serializable {
   @Column(name = "date_fim", nullable = false)
   private Integer date_fim;
 
+  @Column(name = "observations")
+  private String observations;
+
   @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "property_id", nullable = false)
   private PropertyEntity propertyEntity;

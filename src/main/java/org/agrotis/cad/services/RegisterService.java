@@ -1,5 +1,7 @@
 package org.agrotis.cad.services;
 
+import org.agrotis.cad.dto.LaboratoryDto;
+import org.agrotis.cad.dto.PropertyDto;
 import org.agrotis.cad.dto.RegisterDto;
 import org.agrotis.cad.dto.ShippingRegister;
 import org.agrotis.cad.dto.input.RegisterInput;
@@ -39,8 +41,12 @@ public class RegisterService {
       registerEntities.forEach(entity -> {
         RegisterDto registerDto = new RegisterDto();
         BeanUtils.copyProperties(entity, registerDto);
-        registerDto.setCodLaboratory(entity.getLaboratoryEntity().getId());
-        registerDto.setCodProperty(entity.getPropertyEntity().getId());
+        PropertyDto propertyDto = new PropertyDto();
+        LaboratoryDto laboratoryDto = new LaboratoryDto();
+        BeanUtils.copyProperties(entity.getPropertyEntity(), propertyDto);
+        BeanUtils.copyProperties(entity.getLaboratoryEntity(), laboratoryDto);
+        registerDto.setLaboratory(laboratoryDto);
+        registerDto.setInfosProperty(propertyDto);
         registerDtos.add(registerDto);
       });
       ShippingRegister shippingRegister = new ShippingRegister();
