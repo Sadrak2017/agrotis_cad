@@ -1,0 +1,674 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Teste Técnico - Sistema de Cadastro - Agrotis",
+    "description": "Agrotis| Sistema de Cadastro © 2025 Todos os direitos reservados - Termos e condições de uso.",
+    "termsOfService": "https://agrotis.com.br/termos-e-condicoes-de-uso/",
+    "contact": {
+      "name": "Agrotis",
+      "url": "https://agrotis.com.br/",
+      "email": "sadrak_earth@outlook.com"
+    },
+    "license": {
+      "name": "Agrotis | Teste Técnico - Sistema de Cadastro",
+      "url": "https://agrotis.com.br/termos-e-condicoes-de-uso/"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:18545/agrotis/cad",
+      "description": "URL do servidor em ambiente de desenvolvimento"
+    },
+    {
+      "url": "http://hml:18545/agrotis/cad",
+      "description": "URL do servidor em ambiente de homologação/poc"
+    },
+    {
+      "url": "http://prd:18545/agrotis/cad",
+      "description": "URL do servidor em ambiente de produção"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Property - CRUD",
+      "description": "Ações operacionais proprieadades"
+    },
+    {
+      "name": "Register - CRUD",
+      "description": "Ações operacionais cadastro"
+    },
+    {
+      "name": "Laboratory - CRUD",
+      "description": "Ações operacionais laboratórios"
+    }
+  ],
+  "paths": {
+    "/v1/register": {
+      "post": {
+        "tags": [
+          "Register - CRUD"
+        ],
+        "summary": "Cadastra registro.",
+        "description": "Salva cadastro",
+        "operationId": "save",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Cadastro realizado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição inválida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseMessage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/property": {
+      "post": {
+        "tags": [
+          "Property - CRUD"
+        ],
+        "summary": "Cadastra propriedade.",
+        "description": "Salva propriedade",
+        "operationId": "save_1",
+        "requestBody": {
+          "description": "Lista de propriedades para cadastro",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PropertyInput"
+              },
+              "example": [
+                {
+                  "description": "Fazenda Boa Vista"
+                },
+                {
+                  "description": "Latifundio Recanto Feliz"
+                },
+                {
+                  "description": "Fazenda Primavera"
+                },
+                {
+                  "description": "Fazenda Santa Clara"
+                },
+                {
+                  "description": "Fazenda Vale Verde"
+                },
+                {
+                  "description": "Fazenda Água Limpa"
+                }
+              ]
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Cadastro realizado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição inválida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseMessage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/laboratory": {
+      "post": {
+        "tags": [
+          "Laboratory - CRUD"
+        ],
+        "summary": "Cadastra laboratório.",
+        "description": "Salva laboratório",
+        "operationId": "save_2",
+        "requestBody": {
+          "description": "Lista de laboratórios para cadastro",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LaboratoryInput"
+              },
+              "example": [
+                {
+                  "description": "LAB - Fertilização Artificial"
+                },
+                {
+                  "description": "LAB - Análises Químicas"
+                },
+                {
+                  "description": "LAB - Biotecnologia"
+                },
+                {
+                  "description": "LAB - Microbiologia"
+                },
+                {
+                  "description": "LAB - Controle de Qualidade"
+                }
+              ]
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "default": {
+            "description": "Resposta padrão da API",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/register/all": {
+      "get": {
+        "tags": [
+          "Register - CRUD"
+        ],
+        "summary": "Retorna lista de registro.",
+        "description": "Solicita lista de cadastro",
+        "operationId": "search",
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/property/all": {
+      "get": {
+        "tags": [
+          "Property - CRUD"
+        ],
+        "summary": "Retorna lista de propriedades.",
+        "description": "Solicita lista de propriedades",
+        "operationId": "search_1",
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/laboratory/all": {
+      "get": {
+        "tags": [
+          "Laboratory - CRUD"
+        ],
+        "summary": "Retorna lista de laboratórios.",
+        "description": "Solicita lista de laboratórios",
+        "operationId": "search_2",
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/register/{uuid}": {
+      "delete": {
+        "tags": [
+          "Register - CRUD"
+        ],
+        "summary": "Remove cadastro por UUID - RFC-4122",
+        "description": "Remove cadastro",
+        "operationId": "delete",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "query",
+            "description": "Identificador do cadastro (UUID) -  RFC-4122.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Identificador do cadastro (UUID) -  RFC-4122.",
+              "example": "4c6d86df-b297-42a8-adba-4f691facfe98"
+            },
+            "example": "4c6d86df-b297-42a8-adba-4f691facfe98"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/property/{id}": {
+      "delete": {
+        "tags": [
+          "Property - CRUD"
+        ],
+        "summary": "Remove propriedade por ID.",
+        "description": "Remove propriedade",
+        "operationId": "delete_1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/laboratory/{id}": {
+      "delete": {
+        "tags": [
+          "Laboratory - CRUD"
+        ],
+        "summary": "Remove laboratório por ID.",
+        "description": "Remove laboratório",
+        "operationId": "delete_2",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "globalMessage": {
+            "type": "string",
+            "description": "Mensaagem global da API",
+            "example": "Agrotis - API Rest - Sistema de Cadastro 2025"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status da requisição",
+            "example": "OK",
+            "enum": [
+              "100 CONTINUE",
+              "101 SWITCHING_PROTOCOLS",
+              "102 PROCESSING",
+              "103 EARLY_HINTS",
+              "103 CHECKPOINT",
+              "200 OK",
+              "201 CREATED",
+              "202 ACCEPTED",
+              "203 NON_AUTHORITATIVE_INFORMATION",
+              "204 NO_CONTENT",
+              "205 RESET_CONTENT",
+              "206 PARTIAL_CONTENT",
+              "207 MULTI_STATUS",
+              "208 ALREADY_REPORTED",
+              "226 IM_USED",
+              "300 MULTIPLE_CHOICES",
+              "301 MOVED_PERMANENTLY",
+              "302 FOUND",
+              "302 MOVED_TEMPORARILY",
+              "303 SEE_OTHER",
+              "304 NOT_MODIFIED",
+              "305 USE_PROXY",
+              "307 TEMPORARY_REDIRECT",
+              "308 PERMANENT_REDIRECT",
+              "400 BAD_REQUEST",
+              "401 UNAUTHORIZED",
+              "402 PAYMENT_REQUIRED",
+              "403 FORBIDDEN",
+              "404 NOT_FOUND",
+              "405 METHOD_NOT_ALLOWED",
+              "406 NOT_ACCEPTABLE",
+              "407 PROXY_AUTHENTICATION_REQUIRED",
+              "408 REQUEST_TIMEOUT",
+              "409 CONFLICT",
+              "410 GONE",
+              "411 LENGTH_REQUIRED",
+              "412 PRECONDITION_FAILED",
+              "413 PAYLOAD_TOO_LARGE",
+              "413 REQUEST_ENTITY_TOO_LARGE",
+              "414 URI_TOO_LONG",
+              "414 REQUEST_URI_TOO_LONG",
+              "415 UNSUPPORTED_MEDIA_TYPE",
+              "416 REQUESTED_RANGE_NOT_SATISFIABLE",
+              "417 EXPECTATION_FAILED",
+              "418 I_AM_A_TEAPOT",
+              "419 INSUFFICIENT_SPACE_ON_RESOURCE",
+              "420 METHOD_FAILURE",
+              "421 DESTINATION_LOCKED",
+              "422 UNPROCESSABLE_ENTITY",
+              "423 LOCKED",
+              "424 FAILED_DEPENDENCY",
+              "425 TOO_EARLY",
+              "426 UPGRADE_REQUIRED",
+              "428 PRECONDITION_REQUIRED",
+              "429 TOO_MANY_REQUESTS",
+              "431 REQUEST_HEADER_FIELDS_TOO_LARGE",
+              "451 UNAVAILABLE_FOR_LEGAL_REASONS",
+              "500 INTERNAL_SERVER_ERROR",
+              "501 NOT_IMPLEMENTED",
+              "502 BAD_GATEWAY",
+              "503 SERVICE_UNAVAILABLE",
+              "504 GATEWAY_TIMEOUT",
+              "505 HTTP_VERSION_NOT_SUPPORTED",
+              "506 VARIANT_ALSO_NEGOTIATES",
+              "507 INSUFFICIENT_STORAGE",
+              "508 LOOP_DETECTED",
+              "509 BANDWIDTH_LIMIT_EXCEEDED",
+              "510 NOT_EXTENDED",
+              "511 NETWORK_AUTHENTICATION_REQUIRED"
+            ]
+          },
+          "version": {
+            "type": "string",
+            "description": "Versão da API",
+            "example": "25.2.0.RC-SNAPSHOT"
+          },
+          "datetime": {
+            "type": "string",
+            "description": "Data e horário da requisição",
+            "format": "date-time"
+          },
+          "messages": {
+            "type": "array",
+            "description": "Mensagens de retorno da operação realizada",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          },
+          "data": {
+            "type": "object"
+          }
+        },
+        "description": "Resposta padrão da API"
+      },
+      "Message": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Mensagem da operação realizada",
+            "example": "Processamento realizado com sucesso."
+          },
+          "type": {
+            "type": "string",
+            "description": "Tipo da mensagem",
+            "example": "O",
+            "enum": [
+              "E",
+              "C",
+              "A",
+              "I",
+              "S"
+            ]
+          }
+        },
+        "description": "Mensagens de retorno da operação realizada"
+      },
+      "RegisterInput": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Nome do representante",
+            "example": "João Marcos Oliveira"
+          },
+          "data_ini": {
+            "type": "integer",
+            "description": "Data início",
+            "format": "int32",
+            "example": 20250131
+          },
+          "date_fim": {
+            "type": "integer",
+            "description": "Data fim",
+            "format": "int32",
+            "example": 20250519
+          },
+          "codLaboratory": {
+            "type": "integer",
+            "description": "Código do laboratório",
+            "format": "int32",
+            "example": 3
+          },
+          "codProperty": {
+            "type": "integer",
+            "description": "Código da Propriedade",
+            "format": "int32",
+            "example": 6
+          },
+          "observations": {
+            "type": "string",
+            "description": "Observações",
+            "example": "6"
+          }
+        },
+        "description": "Register"
+      },
+      "ApiResponseMessage": {
+        "type": "object",
+        "properties": {
+          "globalMessage": {
+            "type": "string",
+            "description": "Mensaagem global da API",
+            "example": "Agrotis - API Rest - Sistema de Cadastro 2025"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status da requisição",
+            "example": "OK",
+            "enum": [
+              "100 CONTINUE",
+              "101 SWITCHING_PROTOCOLS",
+              "102 PROCESSING",
+              "103 EARLY_HINTS",
+              "103 CHECKPOINT",
+              "200 OK",
+              "201 CREATED",
+              "202 ACCEPTED",
+              "203 NON_AUTHORITATIVE_INFORMATION",
+              "204 NO_CONTENT",
+              "205 RESET_CONTENT",
+              "206 PARTIAL_CONTENT",
+              "207 MULTI_STATUS",
+              "208 ALREADY_REPORTED",
+              "226 IM_USED",
+              "300 MULTIPLE_CHOICES",
+              "301 MOVED_PERMANENTLY",
+              "302 FOUND",
+              "302 MOVED_TEMPORARILY",
+              "303 SEE_OTHER",
+              "304 NOT_MODIFIED",
+              "305 USE_PROXY",
+              "307 TEMPORARY_REDIRECT",
+              "308 PERMANENT_REDIRECT",
+              "400 BAD_REQUEST",
+              "401 UNAUTHORIZED",
+              "402 PAYMENT_REQUIRED",
+              "403 FORBIDDEN",
+              "404 NOT_FOUND",
+              "405 METHOD_NOT_ALLOWED",
+              "406 NOT_ACCEPTABLE",
+              "407 PROXY_AUTHENTICATION_REQUIRED",
+              "408 REQUEST_TIMEOUT",
+              "409 CONFLICT",
+              "410 GONE",
+              "411 LENGTH_REQUIRED",
+              "412 PRECONDITION_FAILED",
+              "413 PAYLOAD_TOO_LARGE",
+              "413 REQUEST_ENTITY_TOO_LARGE",
+              "414 URI_TOO_LONG",
+              "414 REQUEST_URI_TOO_LONG",
+              "415 UNSUPPORTED_MEDIA_TYPE",
+              "416 REQUESTED_RANGE_NOT_SATISFIABLE",
+              "417 EXPECTATION_FAILED",
+              "418 I_AM_A_TEAPOT",
+              "419 INSUFFICIENT_SPACE_ON_RESOURCE",
+              "420 METHOD_FAILURE",
+              "421 DESTINATION_LOCKED",
+              "422 UNPROCESSABLE_ENTITY",
+              "423 LOCKED",
+              "424 FAILED_DEPENDENCY",
+              "425 TOO_EARLY",
+              "426 UPGRADE_REQUIRED",
+              "428 PRECONDITION_REQUIRED",
+              "429 TOO_MANY_REQUESTS",
+              "431 REQUEST_HEADER_FIELDS_TOO_LARGE",
+              "451 UNAVAILABLE_FOR_LEGAL_REASONS",
+              "500 INTERNAL_SERVER_ERROR",
+              "501 NOT_IMPLEMENTED",
+              "502 BAD_GATEWAY",
+              "503 SERVICE_UNAVAILABLE",
+              "504 GATEWAY_TIMEOUT",
+              "505 HTTP_VERSION_NOT_SUPPORTED",
+              "506 VARIANT_ALSO_NEGOTIATES",
+              "507 INSUFFICIENT_STORAGE",
+              "508 LOOP_DETECTED",
+              "509 BANDWIDTH_LIMIT_EXCEEDED",
+              "510 NOT_EXTENDED",
+              "511 NETWORK_AUTHENTICATION_REQUIRED"
+            ]
+          },
+          "version": {
+            "type": "string",
+            "description": "Versão da API",
+            "example": "25.2.0.RC-SNAPSHOT"
+          },
+          "datetime": {
+            "type": "string",
+            "description": "Data e horário da requisição",
+            "format": "date-time"
+          },
+          "messages": {
+            "type": "array",
+            "description": "Mensagens de retorno da operação realizada",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          },
+          "data": {
+            "$ref": "#/components/schemas/Message"
+          }
+        },
+        "description": "Resposta padrão da API"
+      },
+      "PropertyInput": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Descrição",
+            "example": "Propriedade"
+          }
+        },
+        "description": "Property"
+      },
+      "LaboratoryInput": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Descrição",
+            "example": "LAB - Fertilização Artificial"
+          }
+        },
+        "description": "Laboratory"
+      }
+    }
+  }
+}

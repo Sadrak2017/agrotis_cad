@@ -2347,3 +2347,18 @@ This generated password is for development use only. Your security configuration
 2025-06-04 11:47:45.894 INFO  api-agrotis-cad o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2025-06-04 11:47:45.896 INFO  api-agrotis-cad o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
 2025-06-04 11:47:46.455 INFO  api-agrotis-cad o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 288 ms
+2025-06-04 11:51:30.165 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 11:52:06.399 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 11:55:22.298 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 11:56:41.655 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 11:56:53.906 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 11:58:50.435 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 11:59:24.532 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 11:59:24.730 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 11:59:24.843 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 11:59:37.736 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 11:59:37.895 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 11:59:37.958 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 12:00:59.081 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 12:00:59.238 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
+2025-06-04 12:00:59.277 WARN  api-agrotis-cad o.agrotis.cad.messages.ApiResponse - ::api-response:: a requisição não possui um objeto de response
