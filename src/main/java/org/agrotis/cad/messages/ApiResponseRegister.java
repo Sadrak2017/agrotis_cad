@@ -20,24 +20,21 @@ public class ApiResponseRegister extends ApiResponseMessage implements Serializa
   @Schema(description = "Registro")
   private RegisterEntity data;
 
-  public ApiResponseRegister(HttpStatus status, String className, List<Message> messages, RegisterEntity data, String globalMessage) {
+  public ApiResponseRegister(HttpStatus status, List<Message> messages, RegisterEntity data, String globalMessage) {
     this.data = data;
     this.setStatus(status);
     this.setGlobalMessage(globalMessage);
-    this.setClassName(className);
     this.setMessages(messages);
   }
 
-  public ApiResponseRegister(HttpStatus status, String className, List<Message> messages, String globalMessage) {
+  public ApiResponseRegister(HttpStatus status, List<Message> messages, String globalMessage) {
     this.setStatus(status);
     this.setGlobalMessage(globalMessage);
-    this.setClassName(className);
     this.setMessages(messages);
   }
 
-  public ApiResponseRegister(HttpStatus status, String className, Message messages) {
+  public ApiResponseRegister(HttpStatus status, Message messages) {
     this.setStatus(status);
-    this.setClassName(className);
     this.setMessages(List.of(messages));
   }
 }

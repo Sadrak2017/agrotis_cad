@@ -7,14 +7,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Schema(description = "Property")
-public class Property implements Serializable {
+public class PropertyDto implements Serializable {
 
   @Schema(description = "Código", example = "1")
   private Integer id;

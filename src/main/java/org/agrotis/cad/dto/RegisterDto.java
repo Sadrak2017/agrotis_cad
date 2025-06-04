@@ -12,7 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Schema(description = "Register")
-public class Register implements Serializable {
+public class RegisterDto implements Serializable {
 
   @Schema(description = "Código do registro (UUID) - RFC-4122", example = "1d0cd4f1-dffe-447f-ae1e-8336f72e5bb5")
   private String uuid;

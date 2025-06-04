@@ -12,7 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Schema(description = "Laboratory")
-public class Laboratory implements Serializable {
+public class LaboratoryDto implements Serializable {
 
   @Schema(description = "Código", example = "1")
   private Integer id;

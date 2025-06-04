@@ -31,8 +31,6 @@ public class ApiResponseMessage implements Serializable {
   private HttpStatus status;
   @Schema(description = "Versão da API", example = "25.2.0.RC-SNAPSHOT")
   private String version = "24.2.0.RC-SNAPSHOT";
-  @Schema(description = "Classe reposável pela reposta requisição", example = "RegisterService")
-  private String className;
   @Schema(description = "Data e horário da requisição", example = "2024-05-05 15:30:00.000")
   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
   private LocalDateTime datetime;
@@ -45,11 +43,9 @@ public class ApiResponseMessage implements Serializable {
     globalMessage = Objects.isNull(globalMessage) ? globalMessage : globalMessage.concat(" - ").concat(version);
   }
 
-  public ApiResponseMessage(HttpStatus status, String globalMessage) {
+  public ApiResponseMessage(HttpStatus status) {
     this();
     this.status = status;
-    this.globalMessage = globalMessage;
   }
-
 
 }

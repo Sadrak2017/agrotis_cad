@@ -2,7 +2,6 @@ package org.agrotis.cad.messages;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -34,7 +33,7 @@ public class Message implements Serializable {
     C("Consistência"),
     A("Atenção"),
     I("Informação"),
-    O("Sucesso");
+    S("Sucesso");
 
     private final String description;
     MessageTypeEnum(String description) {

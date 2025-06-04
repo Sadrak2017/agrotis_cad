@@ -20,6 +20,6 @@ public class ShippingRegister implements Serializable {
   private static final long serialVersionUID = 1L;
 
   @Schema(description = "Lista de registros")
-  private List<Register> registers;
+  private List<RegisterDto> registerDtos;
 
 }
