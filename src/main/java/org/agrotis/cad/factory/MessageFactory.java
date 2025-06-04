@@ -1,6 +1,8 @@
-package org.agrotis.cad.messages;
+package org.agrotis.cad.factory;
 
 import org.agrotis.cad.enums.MessageLogEnum;
+import org.agrotis.cad.enums.StatusRegister;
+import org.agrotis.cad.messages.Message;
 
 public class MessageFactory {
 
@@ -47,9 +49,10 @@ public class MessageFactory {
     String msg = log.getDeleteErrorMessage() + ": " + (e.getMessage() != null ? e.getMessage() : e.toString());
     return new Message(msg, Message.MessageTypeEnum.E);
   }
-  public static Message forDeleteError(Class<?> clazz, IllegalArgumentException e) {
-    MessageLogEnum log = MessageLogEnum.fromClass(clazz);
-    String msg = log.getDeleteErrorMessage() + ": " + (e.getMessage() != null ? e.getMessage() : e.toString());
-    return new Message(msg, Message.MessageTypeEnum.E);
+
+  public static Message forStatusRegister(StatusRegister status) {
+    Message.MessageTypeEnum type = (status == StatusRegister.REGISTER_SUCESS) ?
+        Message.MessageTypeEnum.S : Message.MessageTypeEnum.E;
+    return new Message(status.getMessage(), type);
   }
 }

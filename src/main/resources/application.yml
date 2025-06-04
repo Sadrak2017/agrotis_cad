@@ -1,5 +1,5 @@
 server:
-  port: 9595
+  port: 18545
   servlet:
     context-path: /agrotis/cad
   security:
@@ -50,6 +50,6 @@ logging:
 agrotis:
   environment:
     server:
-      dev-url: http://localhost:9595${server.servlet.context-path}
-      hml-url: http://hml:9595${server.servlet.context-path}
-      prd-url: http://prd:9595${server.servlet.context-path}
+      dev-url: http://localhost:${server.port}${server.servlet.context-path}
+      hml-url: http://hml:${server.port}${server.servlet.context-path}
+      prd-url: http://prd:${server.port}${server.servlet.context-path}

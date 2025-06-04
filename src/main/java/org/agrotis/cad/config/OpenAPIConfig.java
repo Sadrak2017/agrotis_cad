@@ -5,6 +5,7 @@ import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.servers.Server;
+import io.swagger.v3.oas.models.tags.Tag;
 import org.agrotis.cad.CadApplication;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -59,10 +60,21 @@ public class OpenAPIConfig {
       .license(license);
 
     CadApplication.setVersion(version);
+    Tag registerTag = new Tag()
+        .name("Register - CRUD")
+        .description("Ações operacionais cadastro");
 
+    Tag propertyTag = new Tag()
+        .name("Property - CRUD")
+        .description("Ações operacionais propriedades");
+
+    Tag laboratoryTag = new Tag()
+        .name("Laboratory - CRUD")
+        .description("Ações operacionais laboratórios");
     return new OpenAPI()
       .servers(List.of(devServer, hmlServer, prodServer))
-      .info(info);
+      .info(info)
+      .tags(List.of(registerTag, propertyTag, laboratoryTag));
   }
 
 }

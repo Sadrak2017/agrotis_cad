@@ -40,9 +40,6 @@ public class RegisterEntity implements Serializable {
   @JoinColumn(name = "laboratory_id", nullable = false)
   private LaboratoryEntity laboratoryEntity;
 
-  @Column(name = "update", nullable = false)
-  private Timestamp update = new Timestamp(System.currentTimeMillis());
-
   @Column(name = "created", updatable = false, nullable = false)
   private Timestamp created = new Timestamp(System.currentTimeMillis());
 }

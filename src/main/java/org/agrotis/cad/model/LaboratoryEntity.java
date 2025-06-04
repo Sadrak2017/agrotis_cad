@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -24,9 +23,6 @@ public class LaboratoryEntity implements Serializable {
 
   @Column(name = "description")
   private String description;
-
-  @Column(name = "update", nullable = false)
-  private Timestamp update = new Timestamp(System.currentTimeMillis());
 
   @Column(name = "created", updatable = false, nullable = false)
   private Timestamp created = new Timestamp(System.currentTimeMillis());

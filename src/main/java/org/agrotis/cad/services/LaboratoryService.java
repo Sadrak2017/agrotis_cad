@@ -5,7 +5,7 @@ import org.agrotis.cad.dto.input.LaboratoryInput;
 import org.agrotis.cad.enums.EntityLabelEnum;
 import org.agrotis.cad.messages.ApiResponse;
 import org.agrotis.cad.messages.Message;
-import org.agrotis.cad.messages.MessageFactory;
+import org.agrotis.cad.factory.MessageFactory;
 import org.agrotis.cad.model.LaboratoryEntity;
 import org.agrotis.cad.repositories.LaboratoryRepository;
 import org.agrotis.cad.utils.ValidationUtils;

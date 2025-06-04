@@ -14,12 +14,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Schema(description = "Remessa de registros")
+@Schema(description = "Remessa de cadastros")
 public class ShippingRegister implements Serializable {
   @Serial
   private static final long serialVersionUID = 1L;
 
-  @Schema(description = "Lista de registros")
-  private List<RegisterDto> registerDtos;
+  @Schema(description = "Lista de cadastros")
+  private List<RegisterDto> cadastro;
 
 }

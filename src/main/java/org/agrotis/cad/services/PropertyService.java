@@ -5,7 +5,7 @@ import org.agrotis.cad.dto.input.PropertyInput;
 import org.agrotis.cad.enums.EntityLabelEnum;
 import org.agrotis.cad.messages.ApiResponse;
 import org.agrotis.cad.messages.Message;
-import org.agrotis.cad.messages.MessageFactory;
+import org.agrotis.cad.factory.MessageFactory;
 import org.agrotis.cad.model.PropertyEntity;
 import org.agrotis.cad.repositories.PropertyRepository;
 import org.agrotis.cad.utils.ValidationUtils;

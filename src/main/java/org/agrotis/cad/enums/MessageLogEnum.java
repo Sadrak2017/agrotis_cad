@@ -47,6 +47,20 @@ public enum MessageLogEnum {
       "Falha ao remover dado.",
       "Id inválido.",
       "Registro inexistente para o id informado."
+  ),
+  REGISTER(
+      "Register",
+      "Registros retornados com sucesso!",
+      "Nenhum registro encontrado.",
+      "Falha ao consultar registros.",
+      "Registro salvo com sucesso!",
+      "Registro atualizado com sucesso!",
+      "Registro removido com sucesso!",
+      "Falha ao salvar registro.",
+      "Falha ao atualizar registro.",
+      "Falha ao remover registro.",
+      "Id inválido. Informe um valor numérico inteiro.",
+      "Registro inexistente para o UUID informado."
   );
 
   private final String className;
