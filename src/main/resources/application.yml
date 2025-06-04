@@ -2,11 +2,7 @@ server:
   port: 18545
   servlet:
     context-path: /agrotis/cad
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: ${AUTH_PROVIDER}
+
 spring:
   profiles:
     active:
@@ -18,17 +14,13 @@ spring:
     username: postgres
     password: qa.4736
     driver-class-name: org.postgresql.Driver
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-      ddl-auto: create
-    show-sql: true
+      ddl-auto: update
+    show-sql: false
     properties:
       hibernate:
         format_sql: true

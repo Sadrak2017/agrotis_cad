@@ -60,21 +60,9 @@ public class OpenAPIConfig {
       .license(license);
 
     CadApplication.setVersion(version);
-    Tag registerTag = new Tag()
-        .name("Register - CRUD")
-        .description("Ações operacionais cadastro");
 
-    Tag propertyTag = new Tag()
-        .name("Property - CRUD")
-        .description("Ações operacionais propriedades");
-
-    Tag laboratoryTag = new Tag()
-        .name("Laboratory - CRUD")
-        .description("Ações operacionais laboratórios");
     return new OpenAPI()
       .servers(List.of(devServer, hmlServer, prodServer))
-      .info(info)
-      .tags(List.of(registerTag, propertyTag, laboratoryTag));
+      .info(info);
   }
-
 }
